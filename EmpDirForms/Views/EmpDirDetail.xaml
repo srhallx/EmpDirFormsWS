@@ -10,21 +10,25 @@
 		<StackLayout Orientation="Vertical">
 
 			<StackLayout Orientation="Vertical" Padding="15,25,0,0">
-				<Label Text="{Binding FullName}" FontFamily="Helvetica" FontSize="30" TextColor="#225378"/>
+				<Label Text="{Binding FullName}" FontFamily="Helvetica" FontSize="30" TextColor="#225378">
+					<Label.TextColor>
+						<OnPlatform x:TypeArguments="Color" iOS="#225378" Android="White" />
+					</Label.TextColor>
+				</Label>
 				<Label Text="{Binding Title}" FontFamily="Helvetica" FontSize="16" TextColor="Gray"/>
 
 				<StackLayout Orientation="Horizontal" Padding="0,25,0,15">
-					<Image Source="icon-email.png" WidthRequest="24" HeightRequest="24"/>
+					<Image Source="iconemail.png" WidthRequest="24" HeightRequest="24"/>
 					<Label Text="{Binding Email}" FontSize="20" />
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" Padding="0,0,0,15">
-					<Image Source="icon-phone.png" WidthRequest="24" HeightRequest="24"/>
+					<Image Source="iconphone.png" WidthRequest="24" HeightRequest="24"/>
 					<Label Text="{Binding Phone}" FontSize="20" />
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" Padding="0,0,0,15">
-					<Image Source="icon-twitter.png" WidthRequest="24" HeightRequest="24" />
+					<Image Source="icontwitter.png" WidthRequest="24" HeightRequest="24" />
 					<Label Text="{Binding Twitter}" FontSize="20" />
 				</StackLayout>
 			</StackLayout>

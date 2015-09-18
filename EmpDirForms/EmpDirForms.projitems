@@ -16,9 +16,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\EmpDirList.xaml.cs">
       <DependentUpon>EmpDirList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\EmpDirForms.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\GeoLocation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmpDirForms.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\EmpDirDetail.xaml">
@@ -31,5 +31,8 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.txt" />
   </ItemGroup>
 </Project>

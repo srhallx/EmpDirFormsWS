@@ -8,11 +8,10 @@ namespace EmpDirForms
 	public class App : Application
 	{
 
-		public static EmployeeDirectoryClient EmpDirClient;
-
 		public App ()
 		{
 			// The root page of your application
+			//MainPage = new NavigationPage(new EmpDirList());
 			MainPage = new NavigationPage(new EmpDirList());
 		}
 

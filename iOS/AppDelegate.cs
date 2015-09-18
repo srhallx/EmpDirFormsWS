@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Worklight.Xamarin.iOS;
 using Foundation;
 using UIKit;
 
@@ -15,10 +14,8 @@ namespace EmpDirForms.iOS
 			global::Xamarin.Forms.Forms.Init ();
 			Xamarin.FormsMaps.Init ();
 
-			App.EmpDirClient = new EmployeeDirectory.EmployeeDirectoryClient(WorklightClient.CreateInstance());
-
 			LoadApplication (new App ());
-
+		
 			return base.FinishedLaunching (app, options);
 		}
 	}

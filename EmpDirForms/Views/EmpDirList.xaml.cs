@@ -17,7 +17,8 @@ namespace EmpDirForms
 			itemListview.IsPullToRefreshEnabled = true;
 
 			itemListview.Refreshing += async (sender, e) => {
-				itemListview.ItemsSource = await App.EmpDirClient.AllEmployees();
+				EmployeeDirectoryClient client = new EmployeeDirectoryClient();
+				itemListview.ItemsSource = await client.GetAllEmployees();
 				itemListview.EndRefresh();
 			};
 
@@ -30,15 +31,13 @@ namespace EmpDirForms
 				var selectedData = (Employee)e.SelectedItem;
 
 				//Retrieve geo data
-				selectedData.GeoLocation = await App.EmpDirClient.GetGeolocation(selectedData.City);
+				EmployeeDirectoryClient client = new EmployeeDirectoryClient();
+				selectedData.Loc = await client.GetLocation(selectedData.City);
 
 				var nextPage = new EmpDirDetail(selectedData);
 
 				await Navigation.PushAsync(nextPage);
-
 			};
-				
-
 		}
 
 		public void OnMore (object sender, EventArgs e) {

@@ -1,5 +1,4 @@
 ﻿using System;
-using Worklight.Xamarin.Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -20,11 +19,7 @@ namespace EmpDirForms.Droid
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			Xamarin.FormsMaps.Init(this, bundle);
 
-			App.EmpDirClient = new EmployeeDirectory.EmployeeDirectoryClient (WorklightClient.CreateInstance(this));
-
 			LoadApplication (new App ());
-
-
 
 		}
 	}
