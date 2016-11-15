@@ -28,6 +28,10 @@ namespace EmpDirForms
 
 			//Item clicked
 			itemListview.ItemSelected += async (sender, e) =>  {
+
+				if (e.SelectedItem == null)
+					return;
+				
 				var selectedData = (Employee)e.SelectedItem;
 
 				//Retrieve geo data
@@ -37,6 +41,8 @@ namespace EmpDirForms
 				var nextPage = new EmpDirDetail(selectedData);
 
 				await Navigation.PushAsync(nextPage);
+
+				itemListview.SelectedItem = null;
 			};
 		}
 

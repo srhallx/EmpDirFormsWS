@@ -13,6 +13,7 @@
 							<MenuItem Clicked="OnMore" Text="More" />
 							<MenuItem Clicked="OnDelete" Text="Delete" IsDestructive="True" />
 						</ViewCell.ContextActions>
+
 						<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="0,2,0,2">
 							<ContentView WidthRequest="71" BackgroundColor="#f16337" Padding="10,10,10,10">
 								<Label Text="{Binding Initials}" TextColor="White" FontSize="44"/>
@@ -24,11 +25,7 @@
 										<OnPlatform x:TypeArguments="Color" iOS="#225378" Android="White" />
 									</Label.TextColor>
 								</Label>
-								<Label Text="{Binding Title}" YAlign="Center" FontSize="Small">
-									<Label.TextColor>
-										<OnPlatform x:TypeArguments="Color" Android="#f37d22" />
-									</Label.TextColor>
-								</Label>
+								<Label Text="{Binding Title}" YAlign="Center" FontSize="Small" TextColor="#FF9900"/>	
 							</StackLayout>
 						</StackLayout>
 					</ViewCell>

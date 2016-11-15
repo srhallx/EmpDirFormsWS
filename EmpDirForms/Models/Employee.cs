@@ -7,8 +7,6 @@ namespace EmployeeDirectory
 
 	public class Employee
 	{
-		public string _id { get; set; }
-		public string _rev { get; set; }
 		public string FullName { get; set; }
 		public string Lastname { get; set; }
 		public string Title { get; set; }
@@ -26,19 +24,9 @@ namespace EmployeeDirectory
 		}
 	}
 
-	public class EmployeeRow
-	{
-		public string id { get; set; }
-		public string key { get; set; }
-		public int value { get; set; }
-		public Employee doc { get; set; }
-	}
-
 	public class EmployeeRoot
 	{
-		public int total_rows { get; set; }
-		public int offset { get; set; }
-		public List<EmployeeRow> rows { get; set; }
+		public List<Employee> rows { get; set; }
 	}
 }
 

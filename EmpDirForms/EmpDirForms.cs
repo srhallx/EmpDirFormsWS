@@ -1,5 +1,6 @@
 ﻿using System;
 using EmployeeDirectory;
+using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 
 namespace EmpDirForms
@@ -12,6 +13,7 @@ namespace EmpDirForms
 		{
 			// The root page of your application
 			//MainPage = new NavigationPage(new EmpDirList());
+			CurrentPlatform.Init();
 			MainPage = new NavigationPage(new EmpDirList());
 		}
 

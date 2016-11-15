@@ -7,6 +7,7 @@ using System.Json;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace EmployeeDirectory
 {
@@ -17,8 +18,10 @@ namespace EmployeeDirectory
 
 		public async Task<List<Employee>> GetAllEmployees()
 		{
-			var client = new HttpClient ();
-			var employeeData = await client.GetStringAsync ("https://srhallx.cloudant.com:443/employees/_design/employeeDesignDoc/_view/last?include_docs=true");
+			var client = new MobileServiceClient("https://srhmobileapp.azurewebsites.net");
+
+
+			var employeeData = await client.InvokeApiAsync<string>("Employees", System.Net.Http.HttpMethod.Get, null);
 
 			return ParseEmployeeResultSet (employeeData);
 		}
@@ -35,8 +38,7 @@ namespace EmployeeDirectory
 		{
 			var parsedList = JsonConvert.DeserializeObject<EmployeeRoot> (data).rows;
 
-			//Just return the employee records
-			return parsedList.Select (x => x.doc).ToList<Employee>();
+			return parsedList;
 		}
 
 		protected Location ParseLocationResult(string data)

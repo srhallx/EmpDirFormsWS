@@ -16,8 +16,21 @@ namespace EmpDirForms
 			//Bind data to form
 			this.BindingContext = data;
 
+			Device.OnPlatform(iOS: ()=>AddMaps(data));
+
+		}
+
+		private void AddMaps(Employee data) {
+
+			var map = new Map ();
+			map.WidthRequest = 270;
+			map.HeightRequest = 160;
+			map.MapType = MapType.Street;
+
+			MainLayout.Children.Add (map);
+
 			//Center map on city
-			MyMap.MoveToRegion(
+			map.MoveToRegion(
 				MapSpan.FromCenterAndRadius(
 					new Position(data.Loc.lat, data.Loc.lng), Distance.FromMiles(5)));
 		}
